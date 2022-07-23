@@ -25,6 +25,8 @@ services:
   db:
     image: postgres:13-alpine
     restart: always
+    ports:
+        - "5492:5432"
     environment:
       - POSTGRES_DB=devdb
       - POSTGRES_USER=devuser
