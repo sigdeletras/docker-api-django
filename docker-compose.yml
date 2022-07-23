@@ -12,3 +12,12 @@ services:
     environment:
       - SECRET_KEY=devsecretkey
       - DEBUG=1
+    
+    depends_on:
+      - db
+  db:
+    image: postgis/postgis:13-master
+    environment:
+      - POSTGRES_DB=geodb
+      - POSTGRES_USER=pasoriano
+      - POSTGRES_PASSWORD=mayte2022
